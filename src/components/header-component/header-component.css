@@ -1,0 +1,31 @@
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options_div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+h2{
+    font-size: 1rem;
+}
+
+button{
+    border: none;
+    outline: none;
+}
+
+.add_button{
+    width: 3rem;
+    height: 2rem;
+    background-color: var(--main-purple);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
