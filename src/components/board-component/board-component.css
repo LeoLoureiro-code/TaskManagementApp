@@ -1,0 +1,31 @@
+.board_div{
+    height: calc(100vh - 4rem);
+    display: flex;
+    background-color: var( --page-background-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.no_board_paragraph{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-secondary-color);
+    margin-bottom: 1rem;
+}
+
+.add_button{
+    height: 3rem;
+    width: 10.8rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: var(--button-text-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
