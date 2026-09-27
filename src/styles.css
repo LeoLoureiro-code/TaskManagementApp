@@ -30,24 +30,24 @@ body {
 }
 
 .light{
-    --page-background-color: #F4F7FD;;
+    --page-background-color: #d2d8e2;;
     --header-background-color: #FFFFFF;
     --button-background-color: #635FC7;
     --button-hover-color: #A8A4FF;
     --button-text-color: #FFFFFF;
     --text-primary-color: #000112;
-    --text-secondary-color: #828FA3;
+    --text-secondary-color: #788496;
 
 }
 
 .dark{
-    --page-background-color: #F4F7FD;
+    --page-background-color: #20212C;
     --header-background-color: #2B2C37;
     --button-background-color: #635FC7;
     --button-hover-color: #A8A4FF;
     --button-text-color: #FFFFFF;
     --text-primary-color: #000112;
-    --text-secondary-color: #828FA3;
+    --text-secondary-color: #788496;
 }
 
 header{
@@ -56,4 +56,8 @@ header{
 
 .btn{
     background-color: var(--button-background-color);
+}
+
+.board_div{
+    background-color: var(--page-background-color);
 }
