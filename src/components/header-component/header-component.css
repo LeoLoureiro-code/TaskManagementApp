@@ -35,6 +35,10 @@ img {
     padding: 0;
 }
 
+.add_button_paragraph{
+    display: none;
+}
+
 .add_button{
     width: 3rem;
     height: 2rem;
@@ -42,4 +46,23 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 768px){
+
+    header{
+        grid-column: 1/-1;
+    }
+
+    .add_button_paragraph{
+        color: var(--button-text-color);
+        display: block;
+        font-weight: 700;
+        margin-left: 0.5rem;
+    }
+
+    .add_button{
+        width: 10.25rem;
+        height: 3rem;
+    }
 }
