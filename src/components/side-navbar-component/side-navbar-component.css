@@ -1,0 +1,102 @@
+.side_navbar_div{
+    width: 100%;
+    background-color: var(--header-background-color);
+    padding: 2rem 0;
+    border-right: 1px solid var(--text-secondary-color);
+}
+
+.logo{
+    margin-left: 2rem;
+}
+
+.all_boards_div{
+    margin-top: 4rem;
+}
+
+.board_title{
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--text-secondary-color);
+}
+
+.board_list{
+    list-style: none;
+    margin-top: 1rem;
+    height: 70dvh;
+}
+
+.board_list_item{
+    width: 90%; 
+    height: 3rem;
+    background-color: var(--button-background-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.board_div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.board_img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.board_name{
+    font-weight: 700;
+    color: var(--button-text-color);
+}
+
+.theme_changer_div{
+    background-color: #d2d8e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 3rem;
+}
+
+.theme{
+    filter: brightness(0) saturate(100%) invert(33%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(96%) contrast(90%);
+    opacity: 0.6;
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+.range{
+    appearance: none;
+    height: 20px;
+    width: 2.5rem;
+    background: var(--button-background-color);
+    margin-top: 3px;
+    border-radius: 20px;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.range::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
