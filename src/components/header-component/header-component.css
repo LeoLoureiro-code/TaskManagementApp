@@ -7,6 +7,10 @@ header{
     padding: 1rem;
 }
 
+.title{
+    color: var(--text-title-color);
+}
+
 .options_div{
     display: flex;
     align-items: center;
