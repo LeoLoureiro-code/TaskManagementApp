@@ -9,12 +9,18 @@
                     <p class="board_name">Board name</p>
                 </div>
             </li>
+            <button class="add_board_button">
+                <div class="add_board_div">
+                    <img src="assets/icon-board.svg" alt="board icon" class="board_img">
+                    <p class="add_board_paragraph">+ Create New Board</p>
+                </div>
+            </button>
         </ol>
     </div>
     <div class="sidebar_options">
         <div class="theme_changer_div">
             <img src="assets/icon-sun.svg" alt="sun icon" class="theme">
-            <input type="range" min="0" max="1" value="0" name="" id="theme_range" class="range">
+            <input type="range" min="0" max="1" value="0" name="" id="theme_range" class="range" (input)="ChangeTheme($event)">
             <img src="assets/icon-moon.svg" alt="moon icon" class="theme">
         </div>
     </div>
