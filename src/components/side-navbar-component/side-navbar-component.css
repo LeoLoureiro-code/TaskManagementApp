@@ -54,6 +54,30 @@
     color: var(--button-text-color);
 }
 
+.add_board_button{
+    border: none;
+    margin-top: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.add_board_div{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1rem;
+    background-color: var(--header-background-color);
+}
+
+.add_board_paragraph{
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--button-background-color);
+}
+
 .sidebar_options{
     width: 90%;
     margin: 0 auto;
