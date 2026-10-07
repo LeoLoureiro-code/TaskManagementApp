@@ -5,6 +5,8 @@ import { Board } from '../../interfaces/Board';
   providedIn: 'root',
 })
 export class KanbanService {
+
+  selectedBoard: number | null = null;
   
   BoardState:Board[] = [ 
   {
@@ -13,6 +15,18 @@ export class KanbanService {
     columns: []
   },
 ]
+
+  getBoard(id: number): Board | undefined {
+    return this.BoardState.find(board => board.id === id);
+  }
+
+  addBoard(){
+
+  }
+
+  deleteBoard(){
+
+  }
 
   addColumn(){
 
