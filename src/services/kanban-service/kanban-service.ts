@@ -6,7 +6,7 @@ import { Board } from '../../interfaces/Board';
 })
 export class KanbanService {
 
-  selectedBoard: number | null = null;
+  selectedBoardId: number = 1;
   
   BoardState:Board[] = [ 
   {
@@ -19,6 +19,12 @@ export class KanbanService {
   getBoard(id: number): Board | undefined {
     return this.BoardState.find(board => board.id === id);
   }
+
+  getSelectedBoard(): Board | undefined {
+  return this.BoardState.find(
+    board => board.id === this.selectedBoardId
+  );
+}
 
   addBoard(){
 
