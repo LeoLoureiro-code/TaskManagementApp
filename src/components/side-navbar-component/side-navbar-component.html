@@ -1,14 +1,16 @@
 <div class="side_navbar_div">
     <img src="assets/logo-desktop.svg" alt="logo" class="logo">
     <div class="all_boards_div">
-        <h2 class="board_title">ALL BOARDS (3)</h2>
+        <h2 class="board_title">ALL BOARDS ({{boards.length}})</h2>
         <ol class="board_list">
-            <li class="board_list_item">
-                <div class="board_div">
-                    <img src="assets/icon-board.svg" alt="board icon" class="board_img">
-                    <p class="board_name">Board name</p>
-                </div>
-            </li>
+            @for (board of boards; track board.id){
+                <li class="board_list_item">
+                    <div class="board_div">
+                        <img src="assets/icon-board.svg" alt="board icon" class="board_img">
+                        <p class="board_name">{{board.name}}</p>
+                    </div>
+                </li> 
+            }
             <button class="add_board_button">
                 <div class="add_board_div">
                     <img src="assets/icon-board.svg" alt="board icon" class="board_img">
