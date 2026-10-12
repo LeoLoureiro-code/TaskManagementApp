@@ -1,10 +1,12 @@
 <div class="board_div">
-    <p class="no_board_paragraph">
-        This board is empty. Create a new column to get started.
-    </p>
+    @if(boards.length === null){
+        <p class="no_board_paragraph">
+            This board is empty. Create a new column to get started.
+        </p>
     <button class="btn add_button">
          <img src="assets/icon-cross.svg" alt="cross icon">
          Add New Column
     </button>
+    }
 </div>
 
