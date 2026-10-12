@@ -11,11 +11,10 @@ import { Board } from '../../interfaces/Board';
 })
 export class SideNavbarComponent {
 
-  board: Board | undefined;
+  boards: Board[] = [];
 
   constructor(private themeService:ThemeService, private kanbanService:KanbanService){
-
-    this.board = this.kanbanService.getBoard(1);
+    this.boards = kanbanService.BoardState;
   }
 
   
