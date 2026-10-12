@@ -10,13 +10,11 @@ import { Board } from '../../interfaces/Board';
 })
 export class BoardComponent {
 
+  boards:Board[] = []
 
-  constructor(private kanbanService: KanbanService){}
-
-  get boards(): number{
-    return this.kanbanService.BoardState.length;
+  constructor(private kanbanService: KanbanService){
+    this.boards = kanbanService.BoardState;
   }
-
 
 
 
