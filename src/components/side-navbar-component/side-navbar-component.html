@@ -4,8 +4,8 @@
         <h2 class="board_title">ALL BOARDS ({{boards.length}})</h2>
         <ol class="board_list">
             @for (board of boards; track board.id){
-                <li class="board_list_item">
-                    <div class="board_div">
+                <li class="board_list_item" (click)="selectBoard(board.id)">
+                    <div class="board_div" >
                         <img src="assets/icon-board.svg" alt="board icon" class="board_img">
                         <p class="board_name">{{board.name}}</p>
                     </div>
