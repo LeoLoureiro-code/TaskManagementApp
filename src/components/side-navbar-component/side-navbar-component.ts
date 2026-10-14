@@ -12,9 +12,16 @@ import { Board } from '../../interfaces/Board';
 export class SideNavbarComponent {
 
   boards: Board[] = [];
+  selectedBoardId: number = 0;
 
   constructor(private themeService:ThemeService, private kanbanService:KanbanService){
-    this.boards = kanbanService.BoardState;
+    this.kanbanService.boards$.subscribe(boards => {
+    this.boards = boards;
+    });
+
+    this.kanbanService.boardId$.subscribe(Id =>{
+      this.selectedBoardId = Id;
+    })
   }
 
   
@@ -24,9 +31,9 @@ export class SideNavbarComponent {
     this.themeService.SetTheme(themeValue === '0' ? 'light' : 'dark'); 
   }
 
-  selectedBoard(){
-    let selectedBoard = this.kanbanService.getSelectedBoard();
-    console.log(selectedBoard)
+  selectBoard(id: number): void {
+    console.log('Clicked board:', id);
+    this.kanbanService.selectBoard(id);
   }
 
 
