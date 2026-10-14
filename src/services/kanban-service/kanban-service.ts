@@ -7,7 +7,7 @@ import { Board } from '../../interfaces/Board';
 })
 export class KanbanService {
 
-  public BoardIdSubject = new BehaviorSubject<number>(0);
+  public boardIdSubject = new BehaviorSubject<number>(0);
   
   public boardSubject = new BehaviorSubject<Board[]> ( [ 
   {
@@ -23,11 +23,15 @@ export class KanbanService {
 ]);
 
 boards$ = this.boardSubject.asObservable();
-boardId$ = this.BoardIdSubject.asObservable();
+boardId$ = this.boardIdSubject.asObservable();
 
   // Show the columns in the page when board is selected in the side navbar
   // Show modal with form to add new board to the object
 
+  selectBoard(id: number){
+    this.boardIdSubject.next(id);
+    console.log(this.boardIdSubject.value);
+  }
 
 
   addBoard(){
