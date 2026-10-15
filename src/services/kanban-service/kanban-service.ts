@@ -18,7 +18,13 @@ export class KanbanService {
   {
     id: 2,
     name: 'Test',
-    columns: []
+    columns: [
+      {
+        id: 0,
+        name: "To do",
+        tasks: [],
+      },
+    ]
   }
 ]);
 
@@ -28,14 +34,16 @@ boardId$ = this.boardIdSubject.asObservable();
   // Show the columns in the page when board is selected in the side navbar
   // Show modal with form to add new board to the object
 
-  selectBoard(id: number){
+  selectBoardId(id: number){
     this.boardIdSubject.next(id);
     console.log(this.boardIdSubject.value);
   }
 
+  selectBoard(id: number): Board |undefined{
+    return this.boardSubject.value.find(board => board.id = id);
+  }
 
   addBoard(){
-
   }
 
   deleteBoard(){
