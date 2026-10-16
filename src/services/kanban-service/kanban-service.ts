@@ -22,7 +22,7 @@ export class KanbanService {
       {
         id: 0,
         name: "To do",
-        tasks: [],
+        tasks: [], 
       },
     ]
   }
