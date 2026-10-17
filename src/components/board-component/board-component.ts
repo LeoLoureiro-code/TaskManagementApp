@@ -10,12 +10,21 @@ import { Board } from '../../interfaces/Board';
 })
 export class BoardComponent {
 
-  boards:Board[] = []
+
+  selectedBoardId: number = 0;
+  selectedBoard: Board | undefined;
 
   constructor(private kanbanService: KanbanService){
-    this.boards = kanbanService.BoardState;
+    this.kanbanService.boardId$.subscribe(id =>{
+      this.selectedBoardId = id;
+      console.log(this.selectedBoardId);
+    })
   }
 
+  getBoard(){
+   this.selectedBoard = this.kanbanService.selectBoard(this.selectedBoardId);
+   console.log(this.selectedBoard);
+  }
 
 
 }
