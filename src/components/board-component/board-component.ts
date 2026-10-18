@@ -17,13 +17,12 @@ export class BoardComponent {
   constructor(private kanbanService: KanbanService){
     this.kanbanService.boardId$.subscribe(id =>{
       this.selectedBoardId = id;
-      console.log(this.selectedBoardId);
     })
   }
 
   getBoard(){
    this.selectedBoard = this.kanbanService.selectBoard(this.selectedBoardId);
-   console.log(this.selectedBoard);
+   console.log(this.selectedBoard?.columns);
   }
 
 
