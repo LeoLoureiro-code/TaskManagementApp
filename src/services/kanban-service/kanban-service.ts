@@ -11,12 +11,12 @@ export class KanbanService {
   
   public boardSubject = new BehaviorSubject<Board[]> ( [ 
   {
-    id: 1,
+    id: 0,
     name: 'Platform Launch',
     columns: []
   },
   {
-    id: 2,
+    id: 1,
     name: 'Test',
     columns: [
       {
@@ -24,6 +24,11 @@ export class KanbanService {
         name: "To do",
         tasks: [], 
       },
+      {
+        id: 1,
+        name: "To do 2",
+        tasks: [], 
+      }
     ]
   }
 ]);
@@ -36,12 +41,12 @@ boardId$ = this.boardIdSubject.asObservable();
 
   selectBoardId(id: number){
     this.boardIdSubject.next(id);
-    console.log(this.boardIdSubject.value);
   }
 
   selectBoard(id: number): Board |undefined{
-    return this.boardSubject.value.find(board => board.id = id);
+    return this.boardSubject.value.find(board => board.id === id);
   }
+
 
   addBoard(){
   }
