@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { KanbanService } from '../../services/kanban-service/kanban-service';
 import { Board } from '../../interfaces/Board';
 
@@ -8,7 +8,7 @@ import { Board } from '../../interfaces/Board';
   templateUrl: './board-component.html',
   styleUrl: './board-component.css',
 })
-export class BoardComponent {
+export class BoardComponent{
 
 
   selectedBoardId: number = 0;
@@ -16,13 +16,8 @@ export class BoardComponent {
 
   constructor(private kanbanService: KanbanService){
     this.kanbanService.boardId$.subscribe(id =>{
-      this.selectedBoardId = id;
+      this.selectedBoard = this.kanbanService.selectBoard(id);
     })
-  }
-
-  getBoard(){
-   this.selectedBoard = this.kanbanService.selectBoard(this.selectedBoardId);
-   console.log(this.selectedBoard?.columns);
   }
 
 
