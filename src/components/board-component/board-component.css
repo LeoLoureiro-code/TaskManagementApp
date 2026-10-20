@@ -1,11 +1,13 @@
 .board_div{
     height: calc(100vh - 4rem);
-    display: flex;
     background-color: var( --page-background-color);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 0 2rem;
+    display: grid;
+    grid-auto-columns: 280px;
+    grid-auto-flow: column;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1.5rem;
 }
 
 .no_board_paragraph{
