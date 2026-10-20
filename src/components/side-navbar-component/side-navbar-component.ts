@@ -11,6 +11,7 @@ import { Board } from '../../interfaces/Board';
 })
 export class SideNavbarComponent {
 
+
   boards: Board[] = [];
   selectedBoardId: number = 0;
 
@@ -31,10 +32,8 @@ export class SideNavbarComponent {
     this.themeService.SetTheme(themeValue === '0' ? 'light' : 'dark'); 
   }
 
-  selectBoard(id: number): void {
-    console.log('Clicked board:', id);
-    this.kanbanService.selectBoard(id);
+  selectBoardId(id: number): void {
+    this.kanbanService.selectBoardId(id);
   }
-
 
 }
