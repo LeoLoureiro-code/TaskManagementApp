@@ -27,7 +27,20 @@ export class KanbanService {
       {
         id: 1,
         name: "To do 2",
-        tasks: [], 
+        tasks: [
+          {
+            id: 1,
+            title: 'task 1',
+            description: 'descripcion 1',
+            subtasks: [
+              {
+                id: 1,
+                title: 'subtaks 1',
+                completed: false,
+              },
+            ],
+          },
+        ], 
       }
     ]
   }
