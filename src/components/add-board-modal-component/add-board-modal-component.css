@@ -1,0 +1,12 @@
+.add_board_div{
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.add_board_title{
+    font-weight: 700;
+}
