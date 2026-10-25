@@ -1,13 +1,23 @@
+.no_board_div{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .board_div{
+    position: relative;
     height: calc(100vh - 4rem);
-    background-color: var( --page-background-color);
-    padding: 0 2rem;
+    box-sizing: border-box;
+    background-color: var(--page-background-color);
+    padding: 1.5rem;
     display: grid;
     grid-auto-columns: 280px;
     grid-auto-flow: column;
     gap: 1.5rem;
-    overflow-x: auto;
-    padding: 1.5rem;
+    overflow: auto;
 }
 
 .no_board_paragraph{
@@ -35,5 +45,51 @@
 h3{
     color: var(--text-secondary-color);
     text-align: center;
+    font-size: 0.9rem;
+}
+
+.tasks_list{
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.task_item{
+    display: flex;
+    width: 12.5rem;
+    height: 5.5rem;
+    background-color: var(--header-background-color);
+    margin-top: 1.3rem;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+h4{
+    color: var(--text-title-color);
+    text-align: center;
     font-size: 1rem;
+    text-align: left;
+}
+
+.task_subtasks_completed{
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-secondary-color);
+}
+
+.add_column_button{
+    background-color: var(--header-background-color);
+    height: 100%;
+    border: none;
+    outline: none;
+    color: var(--text-secondary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.add_column_button:hover{
+    cursor: pointer;
 }
