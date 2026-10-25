@@ -1,35 +1,40 @@
 <!--
-  Add the rest of tags for tasks
-  Add styles for those tags
+  To do:
 -->
 
 <div class="board_div">
-<!-- Show this when the board selected has no columns-->
-    @if(selectedBoard === null){
-        <p class="no_board_paragraph">
-            This board is empty. Create a new column to get started.
-        </p>
+  <!-- Show this when the board selected has no columns-->
+  @if(selectedBoard){
+  @if(selectedBoard.columns.length <= 0){ 
+    <div class="no_board_div">
+    <p class="no_board_paragraph">
+      This board is empty. Create a new column to get started.
+    </p>
     <button class="btn add_button">
-         <img src="assets/icon-cross.svg" alt="cross icon">
-         Add New Column
+      <img src="assets/icon-cross.svg" alt="cross icon">
+      Add New Column
     </button>
+</div>
+}
+@else {
+@for (column of selectedBoard.columns; track column.id) {
+<div class="board_column">
+  <div class="dot_div"></div>
+  <h3>{{ column.name }} <span>({{column.tasks.length}})</span></h3>
+  <ul class="tasks_list">
+    @for(task of column.tasks; track task.id){
+    <li class="task_item">
+      <div class="task_div">
+        <h4 class="task_title">{{task.title}}</h4>
+        <!--Show subtasks completed-->
+        <p class="task_subtasks_completed">0 of {{task.subtasks.length}} subtasks</p>
+      </div>
+    </li>
     }
-    @if(selectedBoard){
-      @for (column of selectedBoard.columns; track column.id) {
-        <div class="board_column">
-          <div class="dot_div"></div> <h3>{{ column.name }} <span>({{column.tasks.length}})</span></h3>
-          <ul class="tasks_list">
-            @for(task of column.tasks; track task.id){
-              <li class="task_item">
-                <div class="task_div">
-                  <h4 class="task_title">{{task.title}}</h4>
-                  <!--Show subtasks completed-->
-                  <p class="task_subtasks_completed">0 of {{task.subtasks.length}} subtasks</p>
-                </div>
-              </li>
-            }
-          </ul>
-          
-        </div>
-  }  
+  </ul>
+</div>
+}
+<button class="add_column_button">+ New Column</button>
+}
+
 }
