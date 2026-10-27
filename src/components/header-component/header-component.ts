@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { KanbanService } from '../../services/kanban-service/kanban-service';
 
 @Component({
   selector: 'header-component',
@@ -8,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  isAddTaskModalOpen:boolean = false;
+
+  openAddTaskModal() {
+    this.isAddTaskModalOpen = true;
+  }
+
+  closeAddTaskModal() {
+    this.isAddTaskModalOpen = false;
+  }
 }
