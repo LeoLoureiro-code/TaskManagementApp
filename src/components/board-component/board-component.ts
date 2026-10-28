@@ -10,6 +10,7 @@ import { Board } from '../../interfaces/Board';
 })
 export class BoardComponent{
 
+  //Add method to get random color and put it in the circle each time a column is created
 
   selectedBoardId: number = 0;
   selectedBoard: Board | undefined;
@@ -18,6 +19,10 @@ export class BoardComponent{
     this.kanbanService.boardId$.subscribe(id =>{
       this.selectedBoard = this.kanbanService.selectBoard(id);
     })
+  }
+
+  addDotToColumn(){
+    
   }
 
 
