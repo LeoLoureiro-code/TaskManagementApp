@@ -44,3 +44,32 @@ input{
     border: 0.5px solid var(--text-secondary-color);
 }
 
+.add_subtask_button, .create_task_button{   
+    border: none;
+    border-radius: 20px;
+    height: 2.5rem;
+    font-weight: 700;
+    outline: none;
+}
+
+.add_subtask_button{
+    background-color: var(--board-hover-color);
+    color: var(--button-background-color);
+}
+
+.add_subtask_button:hover{
+    /* background-color: var(--board-hover-color);
+    color: var(--button-background-color); */
+    cursor: pointer;
+}
+
+.create_task_button{
+     background-color: var(--button-background-color);
+    color: var(--button-text-color);
+}
+
+.create_task_button{
+     /* background-color: var(--button-background-color);
+    color: var(--button-text-color); */
+    cursor: pointer;
+}
