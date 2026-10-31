@@ -7,6 +7,7 @@ import { Board } from '../../interfaces/Board';
 })
 export class KanbanService {
 
+
   public boardIdSubject = new BehaviorSubject<number>(0);
   
   public boardSubject = new BehaviorSubject<Board[]> ( [ 
@@ -60,7 +61,11 @@ boardId$ = this.boardIdSubject.asObservable();
     return this.boardSubject.value.find(board => board.id === id);
   }
 
-
+  getBoardName(): string | undefined {
+    const selectedBoardId = this.boardIdSubject.value;
+    return this.selectBoard(selectedBoardId)?.name;
+  }
+  
   addBoard(){
   }
 
