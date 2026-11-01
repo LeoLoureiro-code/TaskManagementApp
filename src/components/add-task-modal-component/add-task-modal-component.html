@@ -1,4 +1,4 @@
-<div class="modal_container" (click)="closeModal()">
+<div class="modal_container">
     <div class="add_task_modal_div">
         <h2>Add New Task</h2>
         <form action="">
@@ -7,11 +7,14 @@
             <label for="description">Description</label>
             <textarea name="description" id="description"></textarea>
             <label for="subtasks">Subtaks</label>
-            <ul>
-                <input type="text" name="" id="">
-            </ul>
+            <ol class="subtasks_list">
+                <li class="subtask_item">
+                    <input class="subtask" type="text" name="" id="">
+                </li> 
+            </ol>
             <button class="btn add_subtask_button">Add New Subtask</button>
-            <select name="" id="">
+            <label for="task_status">Status</label>
+            <select class="task_status" name="task_status" id="">
             </select>
             <button class="btn create_task_button">Create Task</button>
         </form>

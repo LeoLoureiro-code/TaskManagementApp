@@ -44,12 +44,31 @@ input{
     border: 0.5px solid var(--text-secondary-color);
 }
 
+textarea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.subtasks_list{
+    max-width: 26rem;
+    list-style: none;
+}
+
+.subtask{
+    width: 100%;
+}
+
+
 .add_subtask_button, .create_task_button{   
     border: none;
     border-radius: 20px;
     height: 2.5rem;
     font-weight: 700;
     outline: none;
+    margin-top: 1rem;
 }
 
 .add_subtask_button{
@@ -58,18 +77,17 @@ input{
 }
 
 .add_subtask_button:hover{
-    /* background-color: var(--board-hover-color);
-    color: var(--button-background-color); */
+    background-color: #3f454e4b;
+    color: var(--button-background-color); 
     cursor: pointer;
 }
 
 .create_task_button{
-     background-color: var(--button-background-color);
+    background-color: var(--button-background-color);
     color: var(--button-text-color);
 }
 
-.create_task_button{
-     /* background-color: var(--button-background-color);
-    color: var(--button-text-color); */
+.create_task_button:hover{
+    background-color: var(--button-hover-color);
     cursor: pointer;
 }
