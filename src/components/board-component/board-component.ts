@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, input, OnInit, output } from '@angular/core';
 import { KanbanService } from '../../services/kanban-service/kanban-service';
 import { Board } from '../../interfaces/Board';
 
@@ -11,7 +11,10 @@ import { Board } from '../../interfaces/Board';
 export class BoardComponent{
 
   //Add method to get random color and put it in the circle each time a column is created
+  //Add method to show modal with task description and subtasks to check when done
 
+  openModalTask = output<void>();
+  isShowTaskModalOpen = input(false);
   selectedBoardId: number = 0;
   selectedBoard: Board | undefined;
 
@@ -23,6 +26,10 @@ export class BoardComponent{
 
   addDotToColumn(){
     
+  }
+
+  openTaskModal(){
+    this.openModalTask.emit();
   }
 
 
