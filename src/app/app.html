@@ -1,7 +1,55 @@
 <div class="container">
     <side-navbar-component></side-navbar-component>
-    <header-component></header-component>
+    <header-component
+         (openAddTask)="openModal({ type: 'add-task' })">
+    </header-component>
     <board-component></board-component>
     <!-- <router-outlet /> -->
 </div>
 
+@switch (activeModal?.type) {
+
+
+    @case ('add-task') {
+        <add-task-modal-component
+            (close)="closeModal()">
+        </add-task-modal-component>
+    }
+
+    @case ('show-task') {
+        <!-- <show-task-modal-component
+            (close)="closeModal()">
+        </show-task-modal-component> -->
+    }
+
+    @case ('edit-task') {
+        <edit-task-modal-component
+            (close)="closeModal()">
+        </edit-task-modal-component>
+    }
+
+    @case ('delete-task') {
+        <delete-task-modal-component
+            (close)="closeModal()">
+        </delete-task-modal-component>
+    }
+
+
+    @case ('add-board') {
+        <add-board-modal-component
+            (close)="closeModal()">
+        </add-board-modal-component>
+    }
+
+    @case ('edit-board') {
+        <edit-board-modal-component
+            (close)="closeModal()">
+        </edit-board-modal-component>
+    }
+
+    @case ('delete-board') {
+        <delete-board-modal-component
+            (close)="closeModal()">
+        </delete-board-modal-component>
+    }
+}
