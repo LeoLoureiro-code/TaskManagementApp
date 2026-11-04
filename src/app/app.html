@@ -1,5 +1,7 @@
 <div class="container">
-    <side-navbar-component></side-navbar-component>
+    <side-navbar-component
+             (openAddBoard)="openModal($event)">
+    </side-navbar-component>
     <header-component
          (openAddTask)="openModal({ type: 'add-task' })">
     </header-component>
@@ -17,9 +19,9 @@
     }
 
     @case ('show-task') {
-        <!-- <show-task-modal-component
+        <show-task-modal-component
             (close)="closeModal()">
-        </show-task-modal-component> -->
+        </show-task-modal-component>
     }
 
     @case ('edit-task') {
