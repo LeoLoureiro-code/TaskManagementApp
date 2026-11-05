@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { KanbanService } from '../../services/kanban-service/kanban-service';
+import { AddTaskModalComponent } from '../Modals/add-task-modal-component/add-task-modal-component';
+import { ModalConfig } from '../../interfaces/ModalConfig';
 
 @Component({
   selector: 'header-component',
@@ -9,13 +11,18 @@ import { KanbanService } from '../../services/kanban-service/kanban-service';
 })
 export class HeaderComponent {
 
-  isAddTaskModalOpen:boolean = false;
+  isAddTaskModalOpen = input(false);
+  openAddTask = output<void>();
+  boardName: string = "";
 
-  openAddTaskModal() {
-    this.isAddTaskModalOpen = true;
+  constructor(public kanbanService: KanbanService){}
+
+  getBoardName(){
+    this.boardName = this.kanbanService.getBoardName() ?? "";
+    return this.boardName;
   }
 
-  closeAddTaskModal() {
-    this.isAddTaskModalOpen = false;
+  openModal(config: ModalConfig) {
+    this.openAddTask.emit();
   }
 }
