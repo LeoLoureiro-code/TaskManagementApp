@@ -4,19 +4,20 @@
         <img src="assets/logo-mobile.svg" alt="logo">
     </div>
     <h2 class="title">
-        Plataform Launch
+        {{getBoardName()}}
         <button class="options_button">
             <img src="assets/logo-arrow-down.svg" alt="low arrow icon">
         </button>
     </h2>
     </div>
     <div class="options_div">
-        <button class="btn add_button">
+        <button class="btn add_button" (click)="openModal({ type: 'add-task' })">
             <img src="assets/icon-cross.svg" alt="cross icon">
-            <p class="add_button_paragraph" (click)="openAddTaskModal()">Add New Task</p>
+            <p class="add_button_paragraph">Add New Task</p>
         </button>
         <button class="options_button">
             <img src="assets/icon-vertical-elipsis.svg" alt="vertical elipsis icon">
         </button>
     </div>
 </header>
+
