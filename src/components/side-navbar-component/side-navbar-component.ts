@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ThemeService } from '../../services/theme-service/theme-service';
 import { KanbanService } from '../../services/kanban-service/kanban-service';
 import { Board } from '../../interfaces/Board';
+import { ModalConfig } from '../../interfaces/ModalConfig';
 
 @Component({
   selector: 'side-navbar-component',
@@ -14,6 +15,9 @@ export class SideNavbarComponent {
 
   boards: Board[] = [];
   selectedBoardId: number = 0;
+
+  isAddBoardModalOpen = input(false);
+  openAddBoard = output<ModalConfig>();
 
   constructor(private themeService:ThemeService, private kanbanService:KanbanService){
     this.kanbanService.boards$.subscribe(boards => {
@@ -34,6 +38,11 @@ export class SideNavbarComponent {
 
   selectBoardId(id: number): void {
     this.kanbanService.selectBoardId(id);
+  }
+
+  openModal(config: ModalConfig) {
+    this.openAddBoard.emit(config);
+    console.log("open modal pass");
   }
 
 }
