@@ -1,9 +1,11 @@
 <div class="container">
     <side-navbar-component
-             (openAddBoard)="openModal($event)">
+             (openAddBoard)="openModal($event)"
+             [isVisible]="isSidebarVisible">
     </side-navbar-component>
     <header-component
-         (openAddTask)="openModal({ type: 'add-task' })">
+         (openAddTask)="openModal({ type: 'add-task' })"
+         (toggleSidebar)="toggleSidebar()">
     </header-component>
     <board-component></board-component>
     <!-- <router-outlet /> -->
