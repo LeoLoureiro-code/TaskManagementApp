@@ -23,7 +23,7 @@
   <h3>{{ column.name }} <span>({{column.tasks.length}})</span></h3>
   <ul class="tasks_list">
     @for(task of column.tasks; track task.id){
-    <li class="task_item" (click)="openTaskModal()">
+    <li class="task_item" (click)="openTaskModal({ type: 'show-task'})">
       <div class="task_div">
         <h4 class="task_title">{{task.title}}</h4>
         <!--Show subtasks completed-->
