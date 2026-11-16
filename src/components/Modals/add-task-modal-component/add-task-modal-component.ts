@@ -9,6 +9,13 @@ import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular
   templateUrl: './add-task-modal-component.html',
   styleUrl: './add-task-modal-component.css',
 })
+
+/*
+To do:
+  Add subtasks method
+  Validate form method
+  Show the columns in the status section on form
+*/
 export class AddTaskModalComponent {
 
     taskForm = new FormGroup({
@@ -23,6 +30,9 @@ export class AddTaskModalComponent {
   close = output<void>();
 
 
+  submitTask(){
+    console.log(this.taskForm.value);
+  }
 
   closeModal() {
     this.close.emit();

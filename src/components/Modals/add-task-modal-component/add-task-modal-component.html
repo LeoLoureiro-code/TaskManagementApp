@@ -1,11 +1,11 @@
 <div class="modal_container">
     <div class="add_task_modal_div">
         <h2>Add New Task</h2>
-        <form action="">
+        <form [formGroup]="taskForm">
             <label for="title">Title</label>
-            <input type="text" name="tite" id="title">
+            <input type="text" name="tite" id="title" formControlName="title">
             <label for="description">Description</label>
-            <textarea name="description" id="description"></textarea>
+            <textarea name="description" id="description" formControlName="description"></textarea>
             <label for="subtasks">Subtaks</label>
             <ol class="subtasks_list">
                 <li class="subtask_item">
@@ -14,9 +14,9 @@
             </ol>
             <button class="btn add_subtask_button">Add New Subtask</button>
             <label for="task_status">Status</label>
-            <select class="task_status" name="task_status" id="">
+            <select class="task_status" name="task_status" id="" formControlName="status">
             </select>
-            <button class="btn create_task_button">Create Task</button>
+            <button class="btn create_task_button" (click)="submitTask()">Create Task</button>
         </form>
     </div>
 </div>
