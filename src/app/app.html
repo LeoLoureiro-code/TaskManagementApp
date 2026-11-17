@@ -7,8 +7,9 @@
          (openAddTask)="openModal({ type: 'add-task' })"
          (toggleSidebar)="toggleSidebar()">
     </header-component>
-    <board-component></board-component>
-    <!-- <router-outlet /> -->
+    <board-component
+        (openModalTask)="openModal($event)">
+    </board-component>
 </div>
 
 @switch (activeModal?.type) {
