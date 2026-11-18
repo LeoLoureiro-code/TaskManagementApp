@@ -8,13 +8,20 @@
             <textarea name="description" id="description" formControlName="description"></textarea>
             <label for="subtasks">Subtaks</label>
             <ol class="subtasks_list">
-                <li class="subtask_item">
-                    <input class="subtask" type="text" name="" id="">
-                </li> 
+                <!--
+                @for(subtaks of subtasks; track task.id){
+                    <li class="subtask_item">
+                       {{subtask.name}}
+                    </li> 
+                }
+                -->
             </ol>
             <button class="btn add_subtask_button">Add New Subtask</button>
             <label for="task_status">Status</label>
             <select class="task_status" name="task_status" id="" formControlName="status">
+                @for(column of columns; track column.id){
+                    <option>{{column.name}}</option>
+                }
             </select>
             <button class="btn create_task_button" (click)="submitTask()">Create Task</button>
         </form>
