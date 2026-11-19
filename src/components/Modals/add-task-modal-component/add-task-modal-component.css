@@ -17,12 +17,30 @@
     min-width: 21rem;
     max-width: 30rem;
     border-radius: 5px;
+    position: relative;
 }
 
 h2{
     font-size: 1rem;
     font-size: 700;
     margin-bottom: 1rem;
+}
+
+.close_button{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 5%;
+    top: 4%;
+}
+
+.close_button:hover{
+    cursor: pointer;
 }
 
 form{
