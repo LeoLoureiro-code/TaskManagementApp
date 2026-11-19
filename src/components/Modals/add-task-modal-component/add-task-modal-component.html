@@ -1,6 +1,11 @@
+<!--Boton para cerrar modal-->
+
 <div class="modal_container">
     <div class="add_task_modal_div">
         <h2>Add New Task</h2>
+        <button class="close_button" (click)="closeModal()">
+            <img src="assets/icon-close.svg" alt="close icon" >
+        </button>
         <form [formGroup]="taskForm">
             <label for="title">Title</label>
             <input type="text" name="tite" id="title" formControlName="title">
@@ -20,7 +25,9 @@
             <label for="task_status">Status</label>
             <select class="task_status" name="task_status" id="" formControlName="status">
                 @for(column of columns; track column.id){
-                    <option>{{column.name}}</option>
+                <option [value]="column.id">
+                    {{ column.name }}
+                </option>
                 }
             </select>
             <button class="btn create_task_button" (click)="submitTask()">Create Task</button>
