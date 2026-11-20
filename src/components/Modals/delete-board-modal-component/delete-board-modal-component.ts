@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
-  selector: 'app-delete-board-modal-component',
+  selector: 'delete-board-modal-component',
   imports: [],
   templateUrl: './delete-board-modal-component.html',
   styleUrl: './delete-board-modal-component.css',
 })
 export class DeleteBoardModalComponent {
+
+  close = output<void>();
+
+    closeModal() {
+    this.close.emit();
+  }
 
 }
