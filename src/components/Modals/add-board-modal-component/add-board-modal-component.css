@@ -27,6 +27,23 @@
     margin-bottom: 1rem;
 }
 
+.close_button{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 5%;
+    top: 4%;
+}
+
+.close_button:hover{
+    cursor: pointer;
+} 
+
 .add_board_form{
     display: flex;
     flex-direction: column;

@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
-  selector: 'app-add-board-modal-component',
+  selector: 'add-board-modal-component',
   imports: [],
   templateUrl: './add-board-modal-component.html',
   styleUrl: './add-board-modal-component.css',
 })
 export class AddBoardModalComponent {
 
-  isOpen: boolean = false;
+  close = output<void>();
 
-  openModal(){
-    this.isOpen === false ? true : false;
+    closeModal() {
+    this.close.emit();
   }
+
 
 }
