@@ -9,13 +9,14 @@
 }
 
 .show_modal_div{
-     background-color: var(--header-background-color);
+    background-color: var(--header-background-color);
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
     min-width: 21rem;
     max-width: 30rem;
     border-radius: 5px;
+    position: relative;
 }
 
 h2{
@@ -23,6 +24,23 @@ h2{
     font-size: 700;
     margin-bottom: 1rem;
 }
+
+.close_button{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 5%;
+    top: 4%;
+}
+
+.close_button:hover{
+    cursor: pointer;
+} 
 
 .show_modal_paragraph{
  color: var(--text-secondary-color);

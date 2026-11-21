@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'show-task-modal-component',
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ShowTaskModalComponent {
 
+  close = output<void>();
+
+    closeModal() {
+    this.close.emit();
+  }
 }
