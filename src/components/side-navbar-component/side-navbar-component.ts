@@ -19,6 +19,8 @@ export class SideNavbarComponent {
   isAddBoardModalOpen = input(false);
   openAddBoard = output<ModalConfig>();
 
+  isVisible = input(false);
+
   constructor(private themeService:ThemeService, private kanbanService:KanbanService){
     this.kanbanService.boards$.subscribe(boards => {
     this.boards = boards;
