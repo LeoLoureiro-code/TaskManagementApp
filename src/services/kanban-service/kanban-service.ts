@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Board } from '../../interfaces/Board';
+import { Column } from '../../interfaces/Column';
+import { Task } from '../../interfaces/Task';
 
 @Injectable({
   providedIn: 'root',
@@ -50,8 +52,11 @@ export class KanbanService {
 boards$ = this.boardSubject.asObservable();
 boardId$ = this.boardIdSubject.asObservable();
 
-  // Show the columns in the page when board is selected in the side navbar
+selectedColumnId: number | null = null;
+selectedTaskId: number | null = null;
+
   // Show modal with form to add new board to the object
+  // Add method to add subtaks to task
 
   selectBoardId(id: number){
     this.boardIdSubject.next(id);
@@ -65,27 +70,30 @@ boardId$ = this.boardIdSubject.asObservable();
     const selectedBoardId = this.boardIdSubject.value;
     return this.selectBoard(selectedBoardId)?.name;
   }
-  
-  addBoard(){
+
+  getColumns(id: number): Column[] | undefined{
+    const selectedBoardColumns = this.selectBoard(id);
+    return selectedBoardColumns?.columns;
   }
 
-  deleteBoard(){
+  getColumnById(boardId: number, columnId: number): Column | undefined{
+    const board = this.selectBoard(boardId);
+    return board?.columns.find(column => column.id === columnId);
+  }
 
+  getTasks(id:number): Task[] | undefined{
+
+    return
+  }
+  
+  addBoard(){
   }
 
   addColumn(){
 
   }
 
-  deleteColumn(){
-
-  }
-
   addTask(){
-
-  }
-
-  deleteTask(){
 
   }
 
@@ -96,4 +104,17 @@ boardId$ = this.boardIdSubject.asObservable();
   updateTask(){
     
   }
+
+  deleteBoard(){
+
+  }
+
+  deleteColumn(){
+
+  }
+
+  deleteTask(){
+
+  }
+
 }
