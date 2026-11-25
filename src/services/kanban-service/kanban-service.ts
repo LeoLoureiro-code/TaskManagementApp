@@ -83,12 +83,13 @@ selectedTaskId: number | null = null;
 
   getTasks(boardId:number, columnId: number): Task[] | undefined{
     const board = this.selectBoard(boardId);
-    const columns = board?.columns.find(column => column.id === columnId);
-    return columns?.tasks; 
+    const column = board?.columns.find(column => column.id === columnId);
+    return column?.tasks; 
   }
 
   getTaskById(boardId: number, columnId:number, taskId:number): Task | undefined{
-    return
+    const column = this.getColumnById(boardId, columnId);
+    return column?.tasks.find(task => task.id === taskId);
   }
   
   addBoard(){
