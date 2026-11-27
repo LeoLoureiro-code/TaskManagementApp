@@ -91,13 +91,6 @@ selectedTaskId: number | null = null;
     const column = this.getColumnById(boardId, columnId);
     return column?.tasks.find(task => task.id === taskId);
   }
-  
-  addBoard(){
-  }
-
-  addColumn(){
-
-  }
 
   addTask(){
 
@@ -110,8 +103,34 @@ selectedTaskId: number | null = null;
   updateTask(){
     
   }
+  
+  addBoard(boardName: string){
 
-  deleteBoard(){
+    const boardId = this.boardIdSubject.value + 1;
+
+    const newBoard = {
+      id: boardId,
+      name: boardName,
+      columns: [],
+    };
+    
+    const boards = this.boardSubject.value;
+
+    boards.push(newBoard);
+
+    this.boardSubject.next(boards);
+
+    return newBoard;
+  }
+
+  deleteBoard(boardId: number){
+
+    const updatedBoards = this.boardSubject.value.filter(board => boardId !== board.id);
+
+    this.boardSubject.next(updatedBoards);
+  }
+
+  addColumn(){
 
   }
 
