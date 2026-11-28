@@ -1,4 +1,5 @@
 import { Component, output } from '@angular/core';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'add-board-modal-component',
@@ -14,5 +15,11 @@ export class AddBoardModalComponent {
     this.close.emit();
   }
 
+  boardForm = new FormGroup({
+    name: new FormControl(''),
+    columns: new FormArray([
+        new FormControl('')
+      ])
+  });
 
 }
